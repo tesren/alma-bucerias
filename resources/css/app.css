@@ -1,0 +1,141 @@
+@import 'bootstrap/dist/css/bootstrap.css';
+@import url('all.min.css');
+
+:root{
+    --green: #204941;
+    --lightgreen: #989C7A;
+}
+
+body{
+    color: var(--green) !important;
+    font-family: "Lato", sans-serif !important;
+}
+
+.row{
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.link-success {
+    color: var(--green) !important;
+    -webkit-text-decoration-color: var(--green);
+    text-decoration-color: var(--green);
+}
+
+.text-lightgreen{
+    color: var(--lightgreen);
+}
+
+.fs-0{
+    font-size: 62px;
+}
+
+.mt-6{
+    margin-top: 6rem !important;
+}
+
+.mb-6{
+    margin-bottom: 6rem !important;
+}
+
+.my-6{
+    margin-top: 6ch !important;
+    margin-bottom: 6rem !important;
+}
+
+.fondo-oscuro{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    mix-blend-mode: multiply;
+}
+
+.btn-green{
+    background-color: var(--green);
+    color: white;
+    border-radius: 0;
+    font-weight: 300;
+}
+
+.btn-green:hover{
+    color: white;
+    background-color: #14312b;
+    transition: 0.3s;
+}
+
+.btn-outline-green{
+    background-color: white;
+    color:  var(--green);
+    border: 1px solid  var(--green);
+    border-radius: 0;
+    font-weight: 300;
+}
+
+.btn-outline-green:hover{
+    color: white;
+    background-color: var(--green);
+    transition: 0.3s;
+}
+
+.bg-green{
+    background-color: var(--green);
+}
+
+.bg-white{
+    color: var(--green) !important;
+}
+
+.bg-white .nav-link {
+    color: var(--green) !important;
+    opacity: 0.9;
+}
+
+.bg-green .nav-link {
+    color: white !important;
+    opacity: 0.9;
+}
+
+.bg-green .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: white;
+    border-bottom: 2px solid white;
+    opacity: 1;
+}
+
+.bg-green .nav-link:hover, .nav-link:focus {
+    color: white;
+    opacity: 1;
+    border-bottom: 2px solid white;
+}
+
+.btn-light{
+    color: var(--green) !important;
+}
+
+@media (max-width: 992px) {
+
+    .mt-6{
+        margin-top: 4.5rem !important;
+    }
+    
+    .mb-6{
+        margin-bottom: 4.5rem !important;
+    }
+    
+    .my-6{
+        margin-top: 4.5rem !important;
+        margin-bottom: 4.5rem !important;
+    }
+
+    .fs-0{
+        font-size: 40px;
+    }
+
+   
+
+}
