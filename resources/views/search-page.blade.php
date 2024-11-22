@@ -184,12 +184,18 @@
                                     @endauth
 
                                     <td class="{{$badgeBg}} text-light text-center fw-bold">{{ $unit->name }}</td>
-                                    <td class="d-none d-lg-table-cell text-center">{{ $unit->section->tower->name }}</td>
+                                    <td class="d-none d-lg-table-cell text-center">{{ $unit->tower->name }}</td>
 
-                                    <td class="text-center">{{ $unit->floor }}</td>
+                                    <td class="text-center">
+                                        @if ($unit->floor == 0)
+                                            {{__('PB')}}
+                                        @else
+                                            {{ $unit->floor }}
+                                        @endif
+                                    </td>
     
                                     <td class="text-center">                         
-                                        {{ $unit->bedrooms }}
+                                        {{ $unit->unitType->bedrooms }}
                                     </td>
         
                                     <td class="text-center">
@@ -206,7 +212,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('unit', array_merge(['name'=>$unit->name, 'tower'=>$unit->section->tower->name], request()->query() )) }}" class="btn btn-green" target="_blank" rel="noopener noreferrer">
+                                        <a href="{{ route('unit', array_merge(['name'=>$unit->name, 'tower'=>$unit->tower->name], request()->query() )) }}" class="btn btn-green" target="_blank" rel="noopener noreferrer">
                                             {{__('Ver más')}}
                                         </a>
                                     </td>

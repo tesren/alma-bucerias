@@ -158,71 +158,7 @@ class Unit extends Resource
         return [
             BelongsTo::make(__('Tipo de Unidad'), 'unitType', UnitType::class)->withoutTrashed()->rules('required')->filterable()->showOnPreview()->help('Verifica que las medidas de abajo sean correctas')->sortable(),
 
-            Number::make(__('Recámaras'), 'bedrooms')->rules('required')->min(0)->max(15)->help('Dejar en 0 si es Loft o Studio')->sortable()
-            ->dependsOn(
-                ['unitType'],
-                function (Number $field, NovaRequest $request, FormData $formData) {
-
-                    if($formData->unitType != null){
-                        $unit_type = TypeUnit::findOrFail($formData->unitType);
-                        $field->setValue($unit_type->bedrooms);
-                    }
-
-                }
-            ),
-            Number::make(__('Baños'), 'bathrooms')->rules('required')->min(0)->max(15)->step(0.5)->hideFromIndex()
-            ->dependsOn(
-                ['unitType'],
-                function (Number $field, NovaRequest $request, FormData $formData) {
-
-                    if($formData->unitType != null){
-                        $unit_type = TypeUnit::findOrFail($formData->unitType);
-                        $field->setValue($unit_type->bathrooms);
-                    }
-
-                }
-            ),
-
-            Number::make('Interior', 'interior_const')->hideFromIndex()->placeholder('Metros cuadrados del interior')->min(0)->max(99999)->rules('required')->step(0.01)
-            ->displayUsing(
-                function($value){
-                    return $value.' m²';
-                }
-            )->dependsOn(
-                ['unitType'],
-                function (Number $field, NovaRequest $request, FormData $formData) {
-
-                    if($formData->unitType != null){
-                        $unit_type = TypeUnit::findOrFail($formData->unitType);
-                        $field->setValue($unit_type->interior_const);
-                    }
-
-                }
-            ),
-
-            Number::make(__('Terraza'), 'exterior_const')->hideFromIndex()->placeholder('Metros cuadrados de la terraza')->min(0)->max(99999)->rules('required')->step(0.01)
-            ->displayUsing(
-                function($value){
-                    return $value.' m²';
-                }
-            )->dependsOn(
-                ['unitType'],
-                function (Number $field, NovaRequest $request, FormData $formData) {
-
-                    if($formData->unitType != null){
-                        $unit_type = TypeUnit::findOrFail($formData->unitType);
-                        $field->setValue($unit_type->exterior_const);
-                    }
-
-                }
-            ),
-
-            Number::make(__('Jardín'), 'garden')->hideFromIndex()->placeholder('Metros cuadrados del jardín')->min(0)->max(99999)->nullable()->step(0.01)
-            ->displayUsing(
-                function($value){
-                    return $value.' m²';
-                }
-            ),
+            
 
             Number::make(__('Estacionamiento'), 'parking_area')->hideFromIndex()->placeholder('Metros cuadrados del estacionamiento')->min(0)->max(99999)->nullable()->step(0.01)
             ->displayUsing(
@@ -242,7 +178,7 @@ class Unit extends Resource
 
                     if($formData->unitType != null){
                         $unit_type = TypeUnit::findOrFail($formData->unitType);
-                        $total_const = $unit_type->interior_const + $unit_type->exterior_const;
+                        $total_const = $unit_type->total_const;
                         $total_const = round($total_const, 2);
 
                         $field->setValue($total_const);

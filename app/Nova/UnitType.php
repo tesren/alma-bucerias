@@ -69,7 +69,7 @@ class UnitType extends Resource
 
             Text::make(__('Nombre'), 'name')->rules('required', 'max:50')->sortable(),
 
-            BelongsTo::make('Torre', 'tower', Tower::class)->withoutTrashed()->sortable(),
+            //BelongsTo::make('Torre', 'tower', Tower::class)->withoutTrashed()->sortable(),
 
             Number::make(__('Recámaras'), 'bedrooms')->rules('required')->min(0)->max(15)->help('Dejar en 0 si es Loft o Studio')->sortable(),
             Number::make(__('Cuartos Flex'), 'flexrooms')->rules('nullable')->min(0)->max(15)->sortable(),
@@ -89,18 +89,18 @@ class UnitType extends Resource
     protected function sizesFields()
     {
         return [
-            Number::make('Interior', 'interior_const')->hideFromIndex()->placeholder('Metros cuadrados del interior')->min(0)->max(99999)->rules('required')->step(0.01)
+            Number::make('Área total', 'total_const')->hideFromIndex()->placeholder('Metros cuadrados totales')->min(0)->max(99999)->rules('required')->step(0.01)
             ->displayUsing(
                 function($value){
                     return $value.' m²';
                 }
             ),
-            Number::make(__('Terraza'), 'exterior_const')->hideFromIndex()->placeholder('Metros cuadrados de la terraza')->min(0)->max(99999)->rules('required')->step(0.01)
+            /* Number::make(__('Terraza'), 'exterior_const')->hideFromIndex()->placeholder('Metros cuadrados de la terraza')->min(0)->max(99999)->rules('required')->step(0.01)
             ->displayUsing(
                 function($value){
                     return $value.' m²';
                 }
-            ),
+            ), */
             
             //Number::make(__('Cajones de Estacionamiento'), 'parking_spaces')->hideFromIndex()->min(0)->max(100)->nullable()
     

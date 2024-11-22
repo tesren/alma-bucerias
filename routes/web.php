@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\HomePage;
+use App\Livewire\UnitPage;
 use App\Livewire\SearchPage;
 use App\Livewire\LifestylePage;
 use Illuminate\Support\Facades\Route;
@@ -22,5 +23,7 @@ Route::localized(function () {
     Route::get('/estilo-de-vida', LifestylePage::class)->name('lifestyle');
 
     Route::get('/buscar-unidades', SearchPage::class)->name('search');
+    
+    Route::get('/condominio-en-venta/{name}', UnitPage::class)->name('unit');
 
 });

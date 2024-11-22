@@ -27,6 +27,10 @@ body{
     color: var(--lightgreen);
 }
 
+.text-green{
+    color: var(--green) !important;
+}
+
 .fs-0{
     font-size: 62px;
 }
@@ -115,6 +119,19 @@ body{
 
 .btn-light{
     color: var(--green) !important;
+}
+
+.green-hr{
+    color: var(--green);
+    opacity: 1;
+}
+
+.border-success {
+    border-color: var(--green) !important;
+}
+
+.form-control{
+    border-radius: 0px;
 }
 
 @media (max-width: 992px) {
