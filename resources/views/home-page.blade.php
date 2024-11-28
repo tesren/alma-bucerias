@@ -3,7 +3,7 @@
 
     @section('titles')
         <title>ALMA Bucerías - {{__('Preventa de condominios en zona dorada de Bucerías')}}</title>
-        <meta name="description" content="">
+        <meta name="description" content="{{__('Descubre ALMA Bucerías, exclusivos condominios en preventa ubicados en Bucerías, Nayarit, a solo 150 metros de la playa. Ofrecemos departamentos de 2 y 3 recámaras con vistas parciales al mar desde los pisos superiores y amenidades premium como alberca, área BBQ y terraza. ¡Inicia tu vida junto al mar hoy!')}}">
     @endsection
 
     {{-- Inicio --}}
@@ -15,7 +15,7 @@
             <p class="text-secondary fs-5 mb-5">{{__('Descubre nuestro emocionante proyecto de viviendas en Bucerías y sé parte de esta comunidad que valora la calidad de vida, la tranquilidad y la belleza de la costa del Pacífico mexicano.')}}</p>
 
             <div class="text-center text-lg-start">
-                <a href="#" class="btn btn-green py-3 px-4 fs-5 mb-5">
+                <a href="{{route('tower', ['name'=>'A'] )}}" wire:navigate class="btn btn-green py-3 px-4 fs-5 mb-5">
                     {{__('Se parte de esta nueva comunidad')}}
                 </a>
             </div>
@@ -24,17 +24,17 @@
 
                 <div class="col-6 col-lg-4 text-center order-1 order-lg-1">
                     <div class="fs-1">39</div>
-                    <div class="fs-6">{{__('Unidades habitacionales')}}</div>
+                    <p class="fs-6 mb-0">{{__('Unidades habitacionales')}}</p>
                 </div>
 
                 <div class="col-12 col-lg-4 text-center order-3 order-lg-2 mt-4 mt-lg-0">
                     <div class="fs-1">6 PH</div>
-                    <div class="fs-6">{{__('De 145.12m² con 3 recámaras y 3 baños')}}</div>
+                    <p class="fs-6 mb-0">{{__('De 145.12m² con 3 recámaras y 3 baños')}}</p>
                 </div>
 
                 <div class="col-6 col-lg-4 text-center order-2 order-lg-3">
                     <div class="fs-1">3</div>
-                    <div class="fs-6">{{__('Garden Houses')}}</div>
+                    <p class="fs-6 mb-0">{{__('Garden Houses')}}</p>
                 </div>
 
             </div>
@@ -42,15 +42,45 @@
         </div>
 
         <div class="col-12 col-lg-5 order-1 order-lg-2 mb-3 mb-lg-0">
-            <picture>
-                <!-- Imagen para pantallas de escritorio -->
-                <source media="(min-width: 768px)" srcset="{{asset('/img/home-alma.webp')}}">
-                            
-                <!-- Imagen para pantallas de teléfono -->
-                <source media="(max-width: 767px)" srcset="{{asset('/img/alma-bucerias-terraza.webp')}}">
 
-                <img src="{{asset('/img/home-alma.webp')}}" alt="{{__('ALMA Bucerías')}}" class="w-100 object-fit-cover" style="max-height: 80vh;">
-            </picture>
+            <div id="carouselExample" class="carousel slide">
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <picture>
+                            <!-- Imagen para pantallas de escritorio -->
+                            <source media="(min-width: 768px)" srcset="{{asset('/img/home-alma.webp')}}">
+                                        
+                            <!-- Imagen para pantallas de teléfono -->
+                            <source media="(max-width: 767px)" srcset="{{asset('/img/alma-bucerias-terraza.webp')}}">
+            
+                            <img src="{{asset('/img/home-alma.webp')}}" alt="{{__('ALMA Bucerías')}}" class="w-100 object-fit-cover" style="max-height: 80vh;">
+                        </picture>                  
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="{{asset('/img/alma-bucerias-terraza-1.webp')}}" class="d-block w-100 object-fit-cover" alt="{{__('ALMA Bucerías')}}" style="max-height: 80vh;">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="{{asset('/img/alma-bucerias-alberca-1.webp')}}" class="d-block w-100 object-fit-cover" alt="{{__('ALMA Bucerías')}}" style="max-height: 80vh;">
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+
+              </div>
+
         </div>
 
         <div class="col-12 text-center mt-5 order-3 d-none d-lg-block">
@@ -62,7 +92,7 @@
     </div>
 
     {{-- Bucerías --}}
-    <div class="text-center mb-5">
+    <div class="text-center mb-5" id="info">
         <h2 class="fs-1">BUCERÍAS</h2>
         <p class="fs-5 text-secondary">{{__('En Bucerías, la serenidad y la belleza natural están presentes en cada rincón.')}}</p>
     </div>
@@ -70,14 +100,14 @@
     <div class="row justify-content-evenly mb-6">
 
         <div class="col-12 col-lg-5 align-self-center order-2 order-lg-1">
-            <h2 class="mb-4">{{__('El Paraíso Costero que Combina Tranquilidad y Encanto')}}</h2>
+            <h2 class="mb-4">{{__('El paraíso costero que combina tranquilidad y encanto')}}</h2>
 
             <p class="text-secondary fs-5">{{__('Bucerías es una joya costera situada en el municipio de Bahía de Banderas, entre las encantadoras localidades de La Cruz de Huanacaxtle y Nuevo Vallarta. Este paraíso te invita a descubrir un mar sereno, de aguas cristalinas y poco oleaje, perfecto para relajarte bajo el cálido sol mexicano. Su playa de arena dorada se extiende a lo largo de la costa, ofreciéndote un lugar idílico para tomar el sol, nadar o dar un relajante paseo al atardecer.')}}</p>
 
             <p class="text-secondary fs-5 mb-5 d-none d-lg-block">{{__('Sumérgete en su ambiente encantador y auténtico pueblito, donde la cultura local y la hospitalidad de su gente te harán sentir como en casa. Explora sus calles adoquinadas llenas de coloridas tiendas, galerías de arte y restaurantes con auténtica comida mexicana.')}}</p>
         
             <div class="text-center text-lg-start mt-4">
-                <a href="#" class="btn btn-outline-green fs-5 px-4">
+                <a href="{{route('lifestyle')}}" wire:navigate class="btn btn-outline-green fs-5 px-4 shadow">
                     {{__('Descubre más de este paraiso natural')}}
                 </a>
             </div>

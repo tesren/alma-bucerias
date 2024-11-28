@@ -5,13 +5,13 @@
 return [
     '/contacto' => '/contacto',
     '/politicas-privacidad' => '/politicas-privacidad',
-    '/avances-de-obra' => '/avances-de-obra',
-    '/condominios-en-venta' => '/condominios-en-venta',
-    '/buscar-condominios' => '/buscar-condominios',
-    '/condominio-en-preventa' => '/condominio-en-preventa',
+    '/avances-de-construccion' => '/avances-de-construccion',
+    '/inventario/torre' => '/inventario/torre',
+    '/buscar-unidades' => '/buscar-unidades',
+    '/condominio-en-venta' => '/condominio-en-venta',
     '/unidades-guardadas' => '/unidades-guardadas',
     '/estilo-de-vida' => '/estilo-de-vida',
     '/perfil' => '/perfil',
-    '/condominio-dtoscana' => '/condominio-dtoscana',
+    '/desarrollador-del-proyecto' => '/desarrollador-del-proyecto',
     '/inicia-sesion' => '/inicia-sesion'
 ];

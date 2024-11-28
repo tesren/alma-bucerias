@@ -2,7 +2,7 @@
     {{-- Success is as dangerous as failure. --}}
     @section('titles')
         <title>ALMA Bucerías - {{__('Estilo de vida')}}</title>
-        <meta name="description" content="">
+        <meta name="description" content="{{__('Descubre el estilo de vida único de Bucerías, Nayarit, donde la tranquilidad de la playa se combina con la belleza natural y una vibrante comunidad. Vive cada día como vacaciones al adquirir un condominio en ALMA Bucerías, a solo 150 metros del mar. ¡Enamórate del estilo de vida costero!')}}">
     @endsection
 
     <div class="row justify-content-center justify-content-lg-start mb-6 bg-green px-0 pb-5 pb-lg-0">
@@ -23,7 +23,7 @@
             <p class="fs-5 fw-light d-none d-lg-block">{{__('Sumérgete en su ambiente de pueblo encantador y auténtico, donde la cultura local y la hospitalidad de su gente te harán sentir como en casa. Explora sus calles adoquinadas llenas de tiendas coloridas, galerías de arte y restaurantes de auténtica comida mexicana.')}}</p>
             
             <div class="text-center text-lg-start mt-5">
-                <a href="#" class="btn btn-light px-4 fs-5 py-3 rounded-0 shadow">
+                <a href="{{route('tower', ['name'=>'A'] )}}" wire:navigate class="btn btn-light px-4 fs-5 py-3 rounded-0 shadow">
                     {{__('Mira nuestro inventario')}}
                 </a>
             </div>
@@ -40,40 +40,40 @@
             <ol class="fs-5 fw-light ps-3">
 
                 <li class="mb-3">
-                    <strong>{{__('Playas Hermosas:')}}</strong>
+                    <strong>{{__('Playas Hermosas')}}:</strong>
                     {{__('Bucerías cuenta con algunas de las playas más impresionantes de la región, con arenas suaves y aguas cristalinas ideales para relajarse y disfrutar del sol.')}}
                 </li>
 
                 <img src="{{asset('/img/friendly-bucerias.webp')}}" alt="Comunidad amigable en Bucerías" class="d-block d-lg-none w-100 shadow rounded-1 object-fit-cover mb-2" style="height: 250px;">
                 <li class="mb-3">
-                    <strong>{{__('Comunidad Amigable:')}}</strong>
+                    <strong>{{__('Comunidad Amigable')}}:</strong>
                     {{__('Los residentes de Bucerías son conocidos por su hospitalidad y calidez, creando un ambiente acogedor para todos.')}}
                 </li>
 
                 <li class="mb-3">
-                    <strong>{{__('Naturaleza y Montañas:')}}</strong>
+                    <strong>{{__('Naturaleza y Montañas')}}:</strong>
                     {{__('Rodeado de montañas y naturaleza exuberante, Bucerías ofrece un entorno perfecto para los amantes del aire libre y las actividades al aire libre.')}}
                 </li>
 
                 <li class="mb-3">
-                    <strong>{{__('Gastronomía y Restaurantes:')}}</strong>
+                    <strong>{{__('Gastronomía y Restaurantes')}}:</strong>
                     {{__('La oferta culinaria en Bucerías es diversa y deliciosa, con una gran variedad de restaurantes que ofrecen desde mariscos frescos hasta cocina internacional.')}}
                 </li>
 
                 <img src="{{asset('/img/bucerias-home.webp')}}" alt="Artesanías coloridas en Bucerías" class="d-block d-lg-none w-100 shadow rounded-1 object-fit-cover mb-2" style="height: 250px;">
                 <li class="mb-3">
-                    <strong>{{__('Artesanías Coloridas:')}}</strong>
+                    <strong>{{__('Artesanías Coloridas')}}:</strong>
                     {{__('El mercado de artesanías de Bucerías es un lugar vibrante donde se pueden encontrar productos locales únicos y coloridos.')}}
                 </li>
 
                 <li class="mb-3">
-                    <strong>{{__('Paz y Seguridad:')}}</strong>
+                    <strong>{{__('Paz y Seguridad')}}:</strong>
                     {{__('Bucerías es conocido por ser un lugar seguro y tranquilo, ideal para aquellos que buscan un estilo de vida relajado.')}}
                 </li>
 
                 <img src="{{asset('img/deportes-acuaticos.webp')}}" alt="Deportes acuaticos en Bucerías" class="d-block d-lg-none w-100 shadow rounded-1 mb-2">
                 <li class="mb-3">
-                    <strong>{{__('Deportes Acuáticos:')}}</strong>
+                    <strong>{{__('Deportes Acuáticos')}}:</strong>
                     {{__('Las aguas de Bucerías son perfectas para practicar deportes acuáticos como el surf, el paddleboard, el snorkel y la pesca.')}}
                 </li>
             </ol>

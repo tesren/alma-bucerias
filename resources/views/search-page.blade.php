@@ -2,8 +2,8 @@
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
 
     @section('titles')
-        <title>{{__('Inventario')}} - ALMA Bucerías</title>
-        <meta name="description" content="{{__('')}}">
+        <title>{{__('Búsqueda de condominios')}} - ALMA Bucerías</title>
+        <meta name="description" content="{{__('Encuentra el condominio perfecto en ALMA Bucerías con nuestra herramienta de búsqueda. Filtra fácilmente por precio, número de recámaras y más, y explora todos los detalles de nuestros exclusivos departamentos en Bucerías, Nayarit. ¡Haz tu búsqueda simple y efectiva!')}}">
     @endsection
 
 
@@ -265,7 +265,7 @@
         <div class="position-absolute row justify-content-center start-0 top-0 h-100 w-100 z-3 text-white">
             <div class="col-12 col-lg-11 text-center align-self-center">
                 <h4 class="fs-1 mb-4">{{__('¡Tu nuevo hogar en el paraíso te espera en Bucerías!')}}</h4>
-                <a href="#" class="btn btn-light fs-5 rounded-0 py-3 px-5 shadow">{{__('Contáctanos')}}</a>
+                <a href="{{route('contact')}}" wire:navigate class="btn btn-light fs-5 rounded-0 py-3 px-5 shadow">{{__('Contáctanos')}}</a>
             </div>
         </div>
     </div>

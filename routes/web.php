@@ -2,8 +2,12 @@
 
 use App\Livewire\HomePage;
 use App\Livewire\UnitPage;
+use App\Livewire\AboutPage;
 use App\Livewire\SearchPage;
+use App\Livewire\ContactPage;
+use App\Livewire\InventoryPage;
 use App\Livewire\LifestylePage;
+use App\Livewire\ConstructionPage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,10 +24,19 @@ use Illuminate\Support\Facades\Route;
 Route::localized(function () {
 
     Route::get('/', HomePage::class)->name('home');
-    Route::get('/estilo-de-vida', LifestylePage::class)->name('lifestyle');
 
-    Route::get('/buscar-unidades', SearchPage::class)->name('search');
+    Route::get( Lang::uri('/estilo-de-vida'), LifestylePage::class)->name('lifestyle');
     
-    Route::get('/condominio-en-venta/{name}', UnitPage::class)->name('unit');
+    Route::get( Lang::uri('/contacto'), ContactPage::class)->name('contact');
+
+    Route::get( Lang::uri('/desarrollador-del-proyecto'), AboutPage::class)->name('about');
+
+    Route::get( Lang::uri('/avances-de-construccion'), ConstructionPage::class)->name('construction');
+
+    Route::get( Lang::uri('/buscar-unidades'), SearchPage::class)->name('search');
+    
+    Route::get( Lang::uri('/condominio-en-venta').'/{name}', UnitPage::class)->name('unit');
+
+    Route::get( Lang::uri('/inventario/torre').'-{name}', InventoryPage::class)->name('tower');
 
 });

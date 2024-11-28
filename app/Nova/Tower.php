@@ -5,6 +5,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -59,8 +60,11 @@ class Tower extends Resource
             Text::make('Nombre', 'name')->sortable()->rules('required', 'max:50'),
             Text::make('Descripción Español', 'description_es')->sortable()->rules('max:100'),
             Text::make('Descripción Inglés', 'description_en')->sortable()->rules('max:100'),
-            
-            //HasMany::make('Unidades', 'units', Unit::class),
+
+            Image::make('Render', 'render_path')->help('Render donde se pueden apreciar todas las unidades de una vista')->disk('media'),
+            Text::make('View Box', 'viewbox')/* ->rules('required') */->help('NO MODIFICAR, solo el administrador debería modificarlo.'),
+
+            HasMany::make('Unidades', 'units', Unit::class),
         ];
     }
 

@@ -3,11 +3,17 @@
 
     @section('titles')
         <title>{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías</title>
-        <meta name="description" content="{{__('')}}">
+        <meta name="description" content="{{__('Descubre el Condominio :name en ALMA Bucerías, ubicado en el piso :floor con :bedrooms recámaras y :area m² de espacio total. Disfruta de una vida costera, diseño moderno y acceso a exclusivas amenidades como alberca y área BBQ. ¡Tu hogar ideal en Bucerías, Nayarit, te espera!',
+            [
+                'bedrooms' => $unit->unitType->bedrooms,
+                'area' => $unit->const_total,
+                'name' => $unit->name,
+                'floor' => $unit->floor
+            ])}}">
     @endsection
 
 
-    <div class="fs-5 fw-light mt-5">{{__('Información de la unidad')}}</div>
+    <div class="fs-5 fw-light mt-4 mt-lg-5">{{__('Información de la unidad')}}</div>
     <hr class="green-hr">
 
     @php
@@ -47,23 +53,23 @@
 
             <div class="row h-100">
 
-                <div class="col-12 col-lg-6 px-0">
+                <div class="col-6 px-0">
                     @isset($unit_type_imgs[1])
-                        <img src="{{ $unit_type_imgs[1]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover">
+                        <img src="{{ $unit_type_imgs[1]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover" style="min-height: 20vh;">
                     @endisset
 
                     @isset($unit_type_imgs[2])
-                        <img src="{{ $unit_type_imgs[2]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover">
+                        <img src="{{ $unit_type_imgs[2]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover d-none d-lg-block">
                     @endisset
                 </div>
 
-                <div class="col-12 col-lg-6 px-0">
+                <div class="col-6 px-0">
                     @isset($unit_type_imgs[3])
-                        <img src="{{ $unit_type_imgs[3]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover">
+                        <img src="{{ $unit_type_imgs[3]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover"  style="min-height: 20vh;">
                     @endisset
 
                     @isset($unit_type_imgs[4])
-                        <img src="{{ $unit_type_imgs[4]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover">
+                        <img src="{{ $unit_type_imgs[4]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover d-none d-lg-block">
                     @endisset
                 </div>
             </div>
@@ -80,7 +86,7 @@
 
             <div class="row justify-content-between mt-5">
 
-                <div class="col-12 col-lg-5 px-0">
+                <div class="col-12 col-lg-5 px-0 order-2 order-lg-1">
                     <h2>
                         <div class="fs-4">{{__('Precio')}}:</div>
                         <div>${{ number_format($unit->price) }} <span class="fs-5">{{$unit->currency}}</span></div>
@@ -93,7 +99,7 @@
 
                     <h2 class="fs-3">{{__('Más características')}}</h2>
 
-                    <table class="table">
+                    <table class="table mb-5 mb-lg-0">
 
                         <tbody class="fs-5">
 
@@ -129,7 +135,7 @@
 
                 </div>
 
-                <div class="col-12 col-lg-5 px-0">
+                <div class="col-12 col-lg-5 px-0 order-1 order-lg-2 mb-5 mb-lg-0">
                     <div class="d-flex text-center justify-content-center">
 
                         <div class="px-4">
@@ -154,6 +160,20 @@
 
         <div class="col-12 col-lg-4 px-4">
             <livewire:contact-form />
+
+            <div class="row mt-4">
+
+                <div class="col-3">
+                    <img src="{{asset('img/domus-round.webp')}}" alt="Domus Vallarta" class="w-100">
+                </div>
+
+                <div class="col-9 align-self-center">
+                    <div class="fs-3">Domus Vallarta</div>
+                    <a href="tel:+523322005523" class="link-secondary fs-5">
+                        +52 332 200 5523
+                    </a>
+                </div>
+            </div>
         </div>
     
         <h3 class="text-center mt-6 fs-1 mb-5">{{__('Condominios similares')}}</h3>
