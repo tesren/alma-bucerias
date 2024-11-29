@@ -7,7 +7,7 @@
     @endsection
 
 
-    <div class="row mb-6" style="background-image: url('{{asset('/img/fondo-logo.webp')}}')">
+    <div class="row mb-6" style="background-image: url('{{asset('/img/fondo-logo.webp')}}')" id="tower">
 
         <div class="col-12 col-lg-5 px-0 order-2 order-lg-1">
             <div class="position-relative">
@@ -42,13 +42,13 @@
             </div>
         </div>
 
-        <div class="col-12 col-lg-7 px-0 py-5 py-lg-2 align-self-center order-1 order-lg-2">
+        <div class="col-12 col-lg-7 px-0 py-4 py-lg-2 align-self-center order-1 order-lg-2">
 
             <div class="d-block mx-auto p-4 p-lg-5 bg-white col-11 col-lg-8">
                 <h1 class="text-uppercase">{{__('Inventario')}}</h1>
                 <p class="fs-5">{{__('Comprueba disponibilidad y selecciona la unidad para ti.')}}</p>
 
-                <div class="d-flex mb-5 fs-4 fw-light">
+                <div class="d-flex mb-4 mb-lg-5 fs-4 fw-light text-center">
                     <div class="me-3">
                         <i class="fa-solid text-success fa-square"></i> {{__('Disponible')}}
                     </div>
@@ -66,11 +66,13 @@
                     <i class="fa-solid fa-eye"></i> {{__('Selecciona la vista')}}
                 </h2>
 
-                <a href="{{route('tower', ['name'=> 'A'] )}}" wire:navigate class="btn @if($tower->name == 'A') btn-green @else btn-outline-green @endif me-2 px-5 fs-5">{{__('Torre A')}}</a>
+                <div class="d-flex">
+                    <a href="{{route('tower', array_merge(['name'=> 'A'], request()->query() ) )}}#tower" wire:navigate class="btn @if($tower->name == 'A') d-block btn-green @else btn-outline-green @endif me-2 px-5 fs-5">{{__('Torre A')}}</a>
+    
+                    <a href="{{route('tower', array_merge(['name'=> 'B'], request()->query() ) )}}#tower" wire:navigate class="btn @if($tower->name == 'B') d-block btn-green @else btn-outline-green @endif px-5 fs-5">{{__('Torre B')}}</a>
+                </div>
 
-                <a href="{{route('tower', ['name'=> 'B'] )}}" wire:navigate class="btn @if($tower->name == 'B') btn-green @else btn-outline-green @endif px-5 fs-5">{{__('Torre B')}}</a>
-
-                <h2 class="fs-5 mt-5">
+                <h2 class="fs-5 mt-4 mt-lg-5">
                     <i class="fa-solid fa-filter"></i> {{__('Filta las unidades')}}
                 </h2>
 

@@ -23,11 +23,11 @@ class InventoryPage extends Component
     }
 
     public function updated($propertyName)
-{
-    if (in_array($propertyName, ['bedrooms', 'min_price', 'max_price'])) {
-        $this->search();
+    {
+        if (in_array($propertyName, ['bedrooms', 'min_price', 'max_price'])) {
+            $this->search();
+        }
     }
-}
 
     public function search(){
         $units = Unit::where('price', '>' ,$this->min_price)->where('price','<', $this->max_price)->where('tower_id', $this->tower->id);

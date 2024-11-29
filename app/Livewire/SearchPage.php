@@ -57,10 +57,10 @@ class SearchPage extends Component
 
         if($this->tower != 0){
             if ($this->tower == 2) {
-                $units = $units->whereIn('section_id', [1,2] );
+                $units = $units->where('tower_id', 2 );
             } 
             elseif($this->tower == 1){
-                $units = $units->whereIn('section_id', [3,4] );
+                $units = $units->where('tower_id', 1 );
             }            
         }
 
@@ -69,7 +69,14 @@ class SearchPage extends Component
         }
 
         if( $this->bedrooms != 0 ){
-            $units = $units->where('bedrooms', $this->bedrooms );            
+
+            if($this->bedrooms == 3 ){
+                $units = $units->whereIn('unit_type_id', [1,3] );
+            }
+            elseif($this->bedrooms == 2 ){
+                $units = $units->where('unit_type_id', 2 );
+            }
+
         }
 
         $units = $units->orderBy('status', 'desc')->paginate(12);

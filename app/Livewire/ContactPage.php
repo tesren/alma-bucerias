@@ -58,7 +58,7 @@ class ContactPage extends Component
 
 
         //para el webhook
-        $type = "Contacto desde el sitio web de Quadrant Luxury Ocean Living";
+        $type = "Contacto desde el sitio web de ALMA Bucerías";
 
 
         if( app()->getLocale() == 'es' ){
@@ -79,19 +79,19 @@ class ContactPage extends Component
             'url' => $msg->url,
             'content' => $msg->content,
             'interest' => 'Condominios',
-            'development' => 'Quadrant',
+            'development' => 'ALMA Bucerías',
             'lang' => $lang,
             'type'  => $type,
             'created_at' => $msg->created_at,
         ];
 
         // Enviar la solicitud POST al webhook
-        //$response = Http::post($webhookUrl, $data);
+        $response = Http::post($webhookUrl, $data);
 
 
-        //$email = Mail::to('info@domusvallarta.com')->bcc('ventas@punto401.com');
+        $email = Mail::to('info@domusvallarta.com')->bcc('ventas@punto401.com');
     
-        $email = Mail::to('erick@punto401.com');
+        //$email = Mail::to('erick@punto401.com');
         
         $email->send(new NewLead($msg));
 

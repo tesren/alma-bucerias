@@ -5,6 +5,7 @@ use App\Livewire\UnitPage;
 use App\Livewire\AboutPage;
 use App\Livewire\SearchPage;
 use App\Livewire\ContactPage;
+use App\Livewire\PrivacyPage;
 use App\Livewire\InventoryPage;
 use App\Livewire\LifestylePage;
 use App\Livewire\ConstructionPage;
@@ -39,4 +40,17 @@ Route::localized(function () {
 
     Route::get( Lang::uri('/inventario/torre').'-{name}', InventoryPage::class)->name('tower');
 
+    Route::get( Lang::uri('/aviso-de-privacidad'), PrivacyPage::class)->name('privacy');
+
+
+});
+
+Route::get('/alma-optimize', function() {
+
+    Artisan::call('cache:clear');
+    Artisan::call('route:cache');
+    Artisan::call('config:cache');
+    Artisan::call('view:cache');
+
+    return ('Optimizado');
 });

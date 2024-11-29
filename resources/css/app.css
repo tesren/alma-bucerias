@@ -189,6 +189,18 @@ body{
     transition: 0.2s;
 }
 
+.home-carousel-img{
+    height: 80vh;
+    object-fit: cover;
+}
+
+.gallery-img{
+    height: 50%;
+}
+
+.main-gallery-img{
+    height: 55vh;
+}
 
 @media (max-width: 992px) {
 
@@ -209,6 +221,17 @@ body{
         font-size: 40px;
     }
 
-   
+    .home-carousel-img{
+        height: initial;
+        object-fit: cover;
+    }
+
+    .gallery-img{
+        height: 100%;
+    }
+
+    .main-gallery-img{
+        height: 35vh;
+    }
 
 }

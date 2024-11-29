@@ -23,7 +23,7 @@
             <p class="fs-5 fw-light d-none d-lg-block">{{__('Sumérgete en su ambiente de pueblo encantador y auténtico, donde la cultura local y la hospitalidad de su gente te harán sentir como en casa. Explora sus calles adoquinadas llenas de tiendas coloridas, galerías de arte y restaurantes de auténtica comida mexicana.')}}</p>
             
             <div class="text-center text-lg-start mt-5">
-                <a href="{{route('tower', ['name'=>'A'] )}}" wire:navigate class="btn btn-light px-4 fs-5 py-3 rounded-0 shadow">
+                <a href="{{ route('tower', array_merge(['name'=>'A'], request()->query() ) )}}" wire:navigate class="btn btn-light px-4 fs-5 py-3 rounded-0 shadow">
                     {{__('Mira nuestro inventario')}}
                 </a>
             </div>

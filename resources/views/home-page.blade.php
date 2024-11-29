@@ -15,7 +15,7 @@
             <p class="text-secondary fs-5 mb-5">{{__('Descubre nuestro emocionante proyecto de viviendas en Bucerías y sé parte de esta comunidad que valora la calidad de vida, la tranquilidad y la belleza de la costa del Pacífico mexicano.')}}</p>
 
             <div class="text-center text-lg-start">
-                <a href="{{route('tower', ['name'=>'A'] )}}" wire:navigate class="btn btn-green py-3 px-4 fs-5 mb-5">
+                <a href="{{route('tower', array_merge(['name'=>'A'], request()->query() ) )}}" wire:navigate class="btn btn-green py-3 px-4 fs-5 mb-5">
                     {{__('Se parte de esta nueva comunidad')}}
                 </a>
             </div>
@@ -43,7 +43,7 @@
 
         <div class="col-12 col-lg-5 order-1 order-lg-2 mb-3 mb-lg-0">
 
-            <div id="carouselExample" class="carousel slide">
+            <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
 
                 <div class="carousel-inner">
 
@@ -60,21 +60,21 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img src="{{asset('/img/alma-bucerias-terraza-1.webp')}}" class="d-block w-100 object-fit-cover" alt="{{__('ALMA Bucerías')}}" style="max-height: 80vh;">
+                        <img src="{{asset('/img/alma-bucerias-terraza-1.webp')}}" class="d-block w-100 object-fit-cover home-carousel-img" alt="{{__('ALMA Bucerías')}}" >
                     </div>
 
                     <div class="carousel-item">
-                        <img src="{{asset('/img/alma-bucerias-alberca-1.webp')}}" class="d-block w-100 object-fit-cover" alt="{{__('ALMA Bucerías')}}" style="max-height: 80vh;">
+                        <img src="{{asset('/img/alma-bucerias-alberca-1.webp')}}" class="d-block w-100 object-fit-cover home-carousel-img" alt="{{__('ALMA Bucerías')}}" >
                     </div>
 
                 </div>
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
 
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
@@ -107,7 +107,7 @@
             <p class="text-secondary fs-5 mb-5 d-none d-lg-block">{{__('Sumérgete en su ambiente encantador y auténtico pueblito, donde la cultura local y la hospitalidad de su gente te harán sentir como en casa. Explora sus calles adoquinadas llenas de coloridas tiendas, galerías de arte y restaurantes con auténtica comida mexicana.')}}</p>
         
             <div class="text-center text-lg-start mt-4">
-                <a href="{{route('lifestyle')}}" wire:navigate class="btn btn-outline-green fs-5 px-4 shadow">
+                <a href="{{route('lifestyle', request()->query() )}}" wire:navigate class="btn btn-outline-green fs-5 px-4 shadow">
                     {{__('Descubre más de este paraiso natural')}}
                 </a>
             </div>
@@ -182,7 +182,7 @@
     </div>
 
     {{-- Amenidades en movil --}}
-    <div id="carouselExample" class="carousel slide d-block d-lg-none mb-6">
+    <div id="carouselAmenities" class="carousel slide d-block d-lg-none mb-6" data-bs-ride="carousel">
 
         <div class="carousel-inner">
 
@@ -240,12 +240,12 @@
 
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAmenities" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
         
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselAmenities" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>

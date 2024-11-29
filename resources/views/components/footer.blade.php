@@ -47,7 +47,7 @@
     </div>
 
     <div class="col-12 pt-2 px-3 text-center mt-5">
-        <i class="fa-regular fa-copyright"></i> Copyright 2024 {{__('Todos los derechos reservados')}} | <a href="{{--route('privacy', request()->query() )--}}" wire:navigate class="link-success fw-light">{{__('Aviso de Privacidad')}}</a>
+        <i class="fa-regular fa-copyright"></i> Copyright 2024 {{__('Todos los derechos reservados')}} | <a href="{{ route('privacy', request()->query() )}}" wire:navigate class="link-success fw-light">{{__('Aviso de Privacidad')}}</a>
         | 
        <a href="https://punto401.com" class="link-success fw-light text-decoration-none">
            {{__('Sitio web hecho por')}} <img width="70px" src="{{asset('img/logo-p401.svg')}}" alt="Logo de Punto401 Marketing">

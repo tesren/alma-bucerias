@@ -43,40 +43,39 @@
 
     <div class="row mb-5">
 
-        <div class="col-12 col-lg-6 p-1">
+        <div class="col-12 col-lg-8 p-1">
             @isset($unit_type_imgs[0])
-                <img src="{{ $unit_type_imgs[0]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 object-fit-cover" style="min-height: 55vh;">
+                <img src="{{ $unit_type_imgs[0]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 object-fit-cover main-gallery-img">
             @endisset
         </div>
 
-        <div class="col-12 col-lg-6 px-0">
-
+        <div class="col-12 col-lg-4 px-0">
+            
             <div class="row h-100">
-
-                <div class="col-6 px-0">
+                <div class="col-6 col-lg-12 px-0 gallery-img">
                     @isset($unit_type_imgs[1])
-                        <img src="{{ $unit_type_imgs[1]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover" style="min-height: 20vh;">
-                    @endisset
-
-                    @isset($unit_type_imgs[2])
-                        <img src="{{ $unit_type_imgs[2]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover d-none d-lg-block">
+                        <img src="{{ $unit_type_imgs[1]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 p-1 h-100 object-fit-cover">
                     @endisset
                 </div>
-
-                <div class="col-6 px-0">
-                    @isset($unit_type_imgs[3])
-                        <img src="{{ $unit_type_imgs[3]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover"  style="min-height: 20vh;">
-                    @endisset
-
-                    @isset($unit_type_imgs[4])
-                        <img src="{{ $unit_type_imgs[4]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" class="w-100 p-1 h-50 object-fit-cover d-none d-lg-block">
+    
+                <div class="col-6 col-lg-12 px-0 gallery-img">
+                    @isset($unit_type_imgs[2])
+                        <img src="{{ $unit_type_imgs[2]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 p-1 h-100 object-fit-cover">
                     @endisset
                 </div>
             </div>
 
         </div>
-
     </div>
+
+    @if ( count($unit_type_imgs) > 3)
+    
+        @for ($i=3; $i<count($unit_type_imgs); $i++ )
+            <img src="{{ $unit_type_imgs[$i]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="d-none">
+        @endfor
+
+    @endif
+
 
     <div class="row justify-content-between">
         <div class="col-12 col-lg-8">
@@ -179,7 +178,7 @@
         <h3 class="text-center mt-6 fs-1 mb-5">{{__('Condominios similares')}}</h3>
 
         <div class="row mb-6">
-            @foreach ($similar_units as $unit)
+            @foreach ($more_units as $unit)
 
                 @php
                     $imgs = $unit->unitType->getMedia('gallery');
@@ -187,9 +186,11 @@
 
                 <div class="col-12 col-lg-4 mb-4">
 
-                    <a href="{{route('unit', ['name'=>$unit->name] )}}" class="card rounded-0 shadow text-decoration-none" wire:navigate>
+                    <a href="{{route('unit', array_merge(['name'=>$unit->name], request()->query() ) )}}" class="card rounded-0 shadow text-decoration-none" wire:navigate>
 
-                        <img src="{{ $imgs[0]->getUrl('medium') }}" class="w-100 object-fit-cover" style="min-height:270px;" alt="{{__('Condominio')}} {{$unit->name}} ALMA Bucerías">
+                        @isset($imgs[0])
+                            <img src="{{ $imgs[0]->getUrl('medium') }}" class="w-100 object-fit-cover" style="min-height:270px;" alt="{{__('Condominio')}} {{$unit->name}} ALMA Bucerías">
+                        @endisset
 
                         <div class="card-body">
                             <h4 class="text-green">{{'Condominio'}} {{$unit->name}}</h4>
