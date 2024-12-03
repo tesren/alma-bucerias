@@ -7,7 +7,9 @@ use App\Models\Tower;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use App\Models\ConstructionUpdate;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 class NavBar extends Component
 {
@@ -30,6 +32,15 @@ class NavBar extends Component
     public function updateTower($id){
         $tower = Tower::findOrFail($id);
         $this->tower = $tower->name;
+    }
+
+    public function logout(){
+        Auth::guard('web')->logout();
+
+        Session::invalidate();
+        Session::regenerateToken();
+
+        $this->redirect('/', navigate: true);
     }
 
     public function mount()

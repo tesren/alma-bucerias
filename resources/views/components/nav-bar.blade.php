@@ -57,6 +57,41 @@
                             </li>
                         @endif
 
+                        @guest
+                            <li class="nav-item me-0 me-lg-3 align-self-start align-self-lg-center">
+                                <a class="btn btn-outline-light d-none d-lg-block" href="{{ route('login', ['contact'=>$contact] ) }}" wire:navigate>{{__('Inicia sesión')}}</a>
+                                <a class="nav-link d-block d-lg-none fs-5" href="{{ route('login', ['contact'=>$contact] ) }}" wire:navigate><i class="fa-solid fa-right-to-bracket"></i> {{__('Inicia sesión')}}</a>
+                            </li>
+
+                            <li class="nav-item me-0 me-lg-4 align-self-start align-self-lg-center">
+                                <button class="btn btn-light d-none d-lg-block" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">{{__('Regístrate')}}</button>
+                                <button class="nav-link d-block d-lg-none fs-5" type="button" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="fa-solid fa-user-check"></i> {{__('Regístrate')}}</button>
+                            </li>
+                        @endguest
+
+                        @auth
+                            <li class="nav-item dropdown me-0 me-lg-4 d-none d-lg-block">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-regular text-red fs-4 fa-circle-user"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" wire:navigate href="{{route('profile')}}">{{__('Mi Perfil')}}</a></li>
+                                    <li><a class="dropdown-item" href="{{route('saved')}}" wire:navigate>{{__('Unidades Guardadas')}}</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><button class="dropdown-item" wire:click="logout" >{{__('Cerrar sesión')}}</button></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item d-block d-lg-none">
+                                <a class="nav-link fs-5 @if( strpos($route, 'profile') != false) active @endif" href="{{ route('profile') }}" wire:navigate><i class="fa-regular fa-circle-user"></i> {{__('Mi Perfil')}}</a>
+                            </li>
+
+                            <li class="nav-item d-block d-lg-none">
+                                <a class="nav-link fs-5 @if( strpos($route, 'saved') != false) active @endif" href="{{ route('saved') }}" wire:navigate><i class="fa-solid fa-heart"></i> {{__('Unidades Guardadas')}}</a>
+                            </li>
+                        @endauth
+
                         <li class="nav-item me-0 me-lg-4">
         
                             @if ($lang == 'en')

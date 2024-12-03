@@ -3,11 +3,14 @@
 use App\Livewire\HomePage;
 use App\Livewire\UnitPage;
 use App\Livewire\AboutPage;
+use App\Livewire\LoginPage;
 use App\Livewire\SearchPage;
 use App\Livewire\ContactPage;
 use App\Livewire\PrivacyPage;
+use App\Livewire\ProfilePage;
 use App\Livewire\InventoryPage;
 use App\Livewire\LifestylePage;
+use App\Livewire\SavedUnitsPage;
 use App\Livewire\ConstructionPage;
 use Illuminate\Support\Facades\Route;
 
@@ -42,6 +45,11 @@ Route::localized(function () {
 
     Route::get( Lang::uri('/aviso-de-privacidad'), PrivacyPage::class)->name('privacy');
 
+    Route::get( Lang::uri('/iniciar-sesion'), LoginPage::class)->name('login');
+
+    Route::get( Lang::uri('/mi-perfil'), ProfilePage::class)->name('profile');
+
+    Route::get( Lang::uri('/unidades-guardadas'), SavedUnitsPage::class)->name('saved');
 
 });
 

@@ -80,7 +80,27 @@
     <div class="row justify-content-between">
         <div class="col-12 col-lg-8">
     
-            <h1>{{__('Condominio')}} {{$unit->name}}</h1>
+            <h1>
+                {{__('Condominio')}} {{$unit->name}}
+
+                @auth
+                    @if ( !null == $unit->users()->wherePivot('unit_id', $unit->id)->wherePivot('user_id', auth()->user()->id)->first() )
+
+                        <button wire:click="removeUnit({{$unit->id}})" class="btn btn-link link-danger fs-3" title="{{__('Quitar de Favoritos')}}">
+                            <i class="fa-solid fa-heart"></i>
+                        </button>
+
+                    @else
+
+                        <button wire:click="saveUnit({{$unit->id}})" class="btn btn-link link-danger fs-3"  title="{{__('Agregar a Favoritos')}}">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                    @endif
+                @endauth
+
+            </h1>
+
             <p class="text-secondary fs-5 fw-light">{{__('Un sueño hecho realidad. Vive en esta increible unidad adecuada perfectamente para tu familia')}}</p>
 
             <div class="row justify-content-between mt-5">
@@ -209,6 +229,18 @@
     </div>
 
     
+    <div class="position-fixed bottom-0 start-0 ms-1 ms-lg-3 z-3">
+        @if (session('saved'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{__(session('saved'))}} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
+        @if (session('removed'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{__(session('removed'))}} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+    </div>
 
 </div>

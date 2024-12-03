@@ -33,6 +33,7 @@
        
         <livewire:whatsap-btn />
 
+        <livewire:register-form />
 
         {{-- Footer --}}
         @include('components.footer')
