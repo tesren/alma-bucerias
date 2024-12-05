@@ -7,84 +7,69 @@
     @endsection
 
     {{-- Inicio --}}
-    <div class="row justify-content-evenly mt-3 mt-lg-5 mb-6">
+    <div class="position-relative mb-6">
 
-        <div class="col-12 col-lg-4 align-self-center order-2 order-lg-1">
-            <h1 class="fs-0 mb-4">{{__('¡Tu nuevo hogar en el paraíso te espera en Bucerías!')}}</h1>
+        <div id="carouselHomeFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-            <p class="text-secondary fs-5 mb-5">{{__('Descubre nuestro emocionante proyecto de viviendas en Bucerías y sé parte de esta comunidad que valora la calidad de vida, la tranquilidad y la belleza de la costa del Pacífico mexicano.')}}</p>
+            <div class="carousel-inner">
 
-            <div class="text-center text-lg-start">
-                <a href="{{route('tower', array_merge(['name'=>'A'], request()->query() ) )}}" wire:navigate class="btn btn-green py-3 px-4 fs-5 mb-5">
-                    {{__('Se parte de esta nueva comunidad')}}
-                </a>
-            </div>
-
-            <div class="row shadow py-4">
-
-                <div class="col-6 col-lg-4 text-center order-1 order-lg-1">
-                    <div class="fs-1">39</div>
-                    <p class="fs-6 mb-0">{{__('Unidades habitacionales')}}</p>
+                <div class="carousel-item active">
+                    <img src="{{asset('/img/alma-bucerias-terraza.webp')}}" alt="{{__('ALMA Bucerías')}}" class="w-100 object-fit-cover" style="height: 91vh;">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="{{asset('/img/alma-bucerias-alberca-1.webp')}}" class="object-fit-cover w-100" alt="{{__('ALMA Bucerías')}}" style="height: 91vh;">
                 </div>
 
-                <div class="col-12 col-lg-4 text-center order-3 order-lg-2 mt-4 mt-lg-0">
-                    <div class="fs-1">6 PH</div>
-                    <p class="fs-6 mb-0">{{__('De 145.12m² con 3 recámaras y 3 baños')}}</p>
-                </div>
-
-                <div class="col-6 col-lg-4 text-center order-2 order-lg-3">
-                    <div class="fs-1">3</div>
-                    <p class="fs-6 mb-0">{{__('Garden Houses')}}</p>
+                <div class="carousel-item">
+                    <img src="{{asset('/img/alma-bucerias-terraza-1.webp')}}" class="object-fit-cover w-100" alt="{{__('ALMA Bucerías')}}" style="height: 91vh;">
                 </div>
 
             </div>
 
         </div>
 
-        <div class="col-12 col-lg-5 order-1 order-lg-2 mb-3 mb-lg-0">
+        <div class="row justify-content-evenly position-absolute top-0 start-0 h-100 z-3">
+    
+            <div class="col-12 col-lg-4 align-self-center text-white">
 
-            <div id="carouselHome" class="carousel slide" data-bs-ride="carousel">
-
-                <div class="carousel-inner">
-
-                    <div class="carousel-item active">
-                        <picture>
-                            <!-- Imagen para pantallas de escritorio -->
-                            <source media="(min-width: 768px)" srcset="{{asset('/img/home-alma.webp')}}">
-                                        
-                            <!-- Imagen para pantallas de teléfono -->
-                            <source media="(max-width: 767px)" srcset="{{asset('/img/alma-bucerias-terraza.webp')}}">
-            
-                            <img src="{{asset('/img/home-alma.webp')}}" alt="{{__('ALMA Bucerías')}}" class="w-100 object-fit-cover" style="max-height: 80vh;">
-                        </picture>                  
+                <h1 class="fs-0 mb-5 mb-lg-4 text-center text-lg-start">{{__('¡Tu nuevo hogar en el paraíso te espera en Bucerías!')}}</h1>
+    
+                <div class="row shadow py-4 text-green mb-5" style="background-color: rgba(255,255,255, 0.85);">
+    
+                    <div class="col-6 col-lg-4 text-center order-1 order-lg-1">
+                        <div class="fs-1">39</div>
+                        <p class="fs-6 mb-0">{{__('Unidades habitacionales')}}</p>
                     </div>
-
-                    <div class="carousel-item">
-                        <img src="{{asset('/img/alma-bucerias-terraza-1.webp')}}" class="d-block w-100 object-fit-cover home-carousel-img" alt="{{__('ALMA Bucerías')}}" >
+    
+                    <div class="col-12 col-lg-4 text-center order-3 order-lg-2 mt-4 mt-lg-0">
+                        <div class="fs-1">6 PH</div>
+                        <p class="fs-6 mb-0">{{__('De 145.12m² con 3 recámaras y 3 baños')}}</p>
                     </div>
-
-                    <div class="carousel-item">
-                        <img src="{{asset('/img/alma-bucerias-alberca-1.webp')}}" class="d-block w-100 object-fit-cover home-carousel-img" alt="{{__('ALMA Bucerías')}}" >
+    
+                    <div class="col-6 col-lg-4 text-center order-2 order-lg-3">
+                        <div class="fs-1">3</div>
+                        <p class="fs-6 mb-0">{{__('Garden Houses')}}</p>
                     </div>
-
+    
                 </div>
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHome" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
+                <div class="text-center text-lg-start">
+                    <a href="{{route('tower', array_merge(['name'=>'A'], request()->query() ) )}}" wire:navigate class="btn btn-green py-3 px-4 fs-5 mb-5">
+                        {{__('Se parte de esta nueva comunidad')}}
+                    </a>
+                </div>
 
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselHome" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+            </div>
 
-              </div>
-
+            <div class="col-5"></div>
+    
         </div>
 
-        <div class="col-12 text-center mt-5 order-3 d-none d-lg-block">
-            <a href="#info" class="link-success">
+        <div class="fondo-oscuro"></div>
+
+        <div class="position-absolute bottom-0 start-50 text-center mb-5 z-3">
+            <a href="#info" class="link-light">
                 <i class="fa-solid fa-2x fa-bounce fa-arrow-down"></i>
             </a>
         </div>

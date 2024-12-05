@@ -19,4 +19,5 @@ yarn-error.log
 /.vscode
 /public/media
 /public/vendor
+/resources/views/vendor
 .DS_Store
