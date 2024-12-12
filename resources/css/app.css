@@ -90,6 +90,7 @@ body{
 
 .bg-green{
     background-color: var(--green);
+    color: white;
 }
 
 .bg-white{
@@ -211,6 +212,23 @@ body{
     border: 1px solid rgba(32, 73, 65, 0.5) !important;
     color: var(--green);
     border-radius: 0px;
+}
+
+.nav-pills .nav-link {
+    color: var(--green);
+    border: 1px solid var(--green);
+}
+
+.nav-pills .nav-link.active {
+    color: white;
+    background-color: var(--green);
+}
+
+.marked-unit{
+    fill: rgba(0, 163, 60, 0.7);
+    mix-blend-mode: hard-light;
+    stroke: white;
+    stroke-width: 1px;
 }
 
 @media (max-width: 992px) {

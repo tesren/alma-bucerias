@@ -73,7 +73,7 @@
                 </div>
 
                 <h2 class="fs-5 mt-4 mt-lg-5">
-                    <i class="fa-solid fa-filter"></i> {{__('Filta las unidades')}}
+                    <i class="fa-solid fa-filter"></i> {{__('Filtra las unidades')}}
                 </h2>
 
                 <form class="mb-3" wire:submit.prevent="search">

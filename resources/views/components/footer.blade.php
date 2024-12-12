@@ -5,10 +5,10 @@
     </div>
 
     <div class="col-12 col-lg-3 mb-5 mb-lg-0 text-center text-lg-start px-4 px-lg-3">
-        <div class="fs-3 mb-3">{{__('Domicilio')}}</div>
+        <div class="fs-3 mb-3">{{__('Oficina de ventas')}}</div>
 
         <address class="fs-5 fw-light mb-3">
-            <i class="fa-solid fa-location-dot"></i> Av México 61, 63735 Nuevo Vallarta, Nay.
+            <i class="fa-solid fa-location-dot"></i> Lázaro Cárdenas #84 L-2, Colonia Dorada, Bucerías, Bahía de Banderas, Nayarit, C.P. 63732
         </address>
 
         <a href="https://domusvallarta.com" class="text-decoration-none link-success d-block my-4 my-lg-0">

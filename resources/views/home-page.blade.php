@@ -18,11 +18,11 @@
                 </div>
                 
                 <div class="carousel-item">
-                    <img src="{{asset('/img/alma-bucerias-alberca-1.webp')}}" class="object-fit-cover w-100" alt="{{__('ALMA Bucerías')}}" style="height: 91vh;">
+                    <img src="{{asset('/img/alma-bucerias-alberca-1.webp')}}" class="object-fit-cover w-100" alt="{{__('ALMA Bucerías')}}" style="height: 91vh;" loading="lazy">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="{{asset('/img/alma-bucerias-terraza-1.webp')}}" class="object-fit-cover w-100" alt="{{__('ALMA Bucerías')}}" style="height: 91vh;">
+                    <img src="{{asset('/img/alma-bucerias-terraza-1.webp')}}" class="object-fit-cover w-100" alt="{{__('ALMA Bucerías')}}" style="height: 91vh;" loading="lazy">
                 </div>
 
             </div>
@@ -39,7 +39,7 @@
     
                     <div class="col-6 col-lg-4 text-center order-1 order-lg-1">
                         <div class="fs-1">39</div>
-                        <p class="fs-6 mb-0">{{__('Unidades habitacionales')}}</p>
+                        <p class="fs-6 mb-0">{{__('Unidades de 2 recámaras') }}</p>
                     </div>
     
                     <div class="col-12 col-lg-4 text-center order-3 order-lg-2 mt-4 mt-lg-0">
@@ -49,7 +49,7 @@
     
                     <div class="col-6 col-lg-4 text-center order-2 order-lg-3">
                         <div class="fs-1">3</div>
-                        <p class="fs-6 mb-0">{{__('Garden Houses')}}</p>
+                        <p class="fs-6 mb-0">{{__('Garden Houses de 3 recámaras')}} </p>
                     </div>
     
                 </div>
@@ -99,7 +99,7 @@
         </div>
 
         <div class="col-12 col-lg-4 order-1 order-lg-2 mb-3 mb-lg-0">
-            <img src="{{asset('img/bucerias-home.webp')}}" alt="ALMA Bucerías" class="w-100">
+            <img src="{{asset('img/bucerias-home.webp')}}" alt="ALMA Bucerías" class="w-100" loading="lazy">
         </div>
 
     </div>
@@ -114,7 +114,7 @@
 
         <div class="col-12 col-lg-3">
             <div class="position-relative">
-                <img src="{{asset('img/alma-bucerias-alberca.webp')}}" alt="ALMA Bucerías - {{__('Alberca infinita')}}" class="w-100 object-fit-cover" style="height:550px;">
+                <img src="{{asset('img/alma-bucerias-alberca.webp')}}" alt="ALMA Bucerías - {{__('Alberca infinita')}}" class="w-100 object-fit-cover" style="height:550px;" data-fancybox="home-gallery" loading="lazy">
     
                 <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply;"></div>
 
@@ -127,7 +127,7 @@
 
         <div class="col-12 col-lg-3">
             <div class="position-relative">
-                <img src="{{asset('img/alma-bucerias-lobby.webp')}}" alt="ALMA Bucerías - {{__('Lobby')}}" class="w-100 object-fit-cover" style="height:550px;">
+                <img src="{{asset('img/alma-bucerias-lobby.webp')}}" alt="ALMA Bucerías - {{__('Lobby')}}" class="w-100 object-fit-cover" style="height:550px;" data-fancybox="home-gallery" loading="lazy">
     
                 <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply; opacity:0.8;"></div>
 
@@ -140,7 +140,7 @@
 
         <div class="col-12 col-lg-3">
             <div class="position-relative">
-                <img src="{{asset('img/alma-bucerias-terraza-1.webp')}}" alt="ALMA Bucerías - {{__('Rooftop')}}" class="w-100 object-fit-cover" style="height:550px;">
+                <img src="{{asset('img/alma-bucerias-terraza-1.webp')}}" alt="ALMA Bucerías - {{__('Rooftop')}}" class="w-100 object-fit-cover" style="height:550px;" data-fancybox="home-gallery" loading="lazy">
     
                 <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply; opacity:0.8;"></div>
 
@@ -153,7 +153,7 @@
 
         <div class="col-12 col-lg-3">
             <div class="position-relative">
-                <img src="{{asset('img/alma-bucerias-alberca-1.webp')}}" alt="ALMA Bucerías - {{__('Área BBQ')}}" class="w-100 object-fit-cover" style="height:550px;">
+                <img src="{{asset('img/alma-bucerias-alberca-1.webp')}}" alt="ALMA Bucerías - {{__('Área BBQ')}}" class="w-100 object-fit-cover" style="height:550px;" data-fancybox="home-gallery" loading="lazy">
     
                 <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply; opacity:0.8;"></div>
 
@@ -173,7 +173,7 @@
 
             <div class="carousel-item active">
                 <div class="position-relative">
-                    <img src="{{asset('img/alma-bucerias-alberca.webp')}}" alt="ALMA Bucerías - {{__('Alberca infinita')}}" class="w-100 object-fit-cover" style="height:550px;">
+                    <img src="{{asset('img/alma-bucerias-alberca.webp')}}" alt="ALMA Bucerías - {{__('Alberca infinita')}}" class="w-100 object-fit-cover" style="height:550px;" loading="lazy">
 
                     <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply;"></div>
 
@@ -186,7 +186,7 @@
 
             <div class="carousel-item">
                 <div class="position-relative">
-                    <img src="{{asset('img/alma-bucerias-lobby.webp')}}" alt="ALMA Bucerías - {{__('Lobby')}}" class="w-100 object-fit-cover" style="height:550px;">
+                    <img src="{{asset('img/alma-bucerias-lobby.webp')}}" alt="ALMA Bucerías - {{__('Lobby')}}" class="w-100 object-fit-cover" style="height:550px;" loading="lazy">
         
                     <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply; opacity:0.8;"></div>
     
@@ -199,7 +199,7 @@
 
             <div class="carousel-item">
                 <div class="position-relative">
-                    <img src="{{asset('img/alma-bucerias-terraza-1.webp')}}" alt="ALMA Bucerías - {{__('Rooftop')}}" class="w-100 object-fit-cover" style="height:550px;">
+                    <img src="{{asset('img/alma-bucerias-terraza-1.webp')}}" alt="ALMA Bucerías - {{__('Rooftop')}}" class="w-100 object-fit-cover" style="height:550px;" loading="lazy">
         
                     <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply; opacity:0.8;"></div>
     
@@ -212,7 +212,7 @@
 
             <div class="carousel-item">
                 <div class="position-relative">
-                    <img src="{{asset('img/alma-bucerias-alberca-1.webp')}}" alt="ALMA Bucerías - {{__('Área BBQ')}}" class="w-100 object-fit-cover" style="height:550px;">
+                    <img src="{{asset('img/alma-bucerias-alberca-1.webp')}}" alt="ALMA Bucerías - {{__('Área BBQ')}}" class="w-100 object-fit-cover" style="height:550px;" loading="lazy">
         
                     <div class="py-4 position-absolute bottom-0 start-0 w-100 bg-green z-1" style="mix-blend-mode:multiply; opacity:0.8;"></div>
     
@@ -248,7 +248,32 @@
         <div class="row justify-content-evenly container bg-white py-5 px-0 px-lg-2">
 
             <div class="col-12 col-lg-5 mb-4 mb-lg-0">
-                <img src="{{asset('img/fachada-home.webp')}}" alt="ALMA Bucerías - Fachada" class="w-100">
+                
+                <div id="carouselBuilding" class="carousel slide">
+
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item">
+                            <img src="{{asset('/img/montaje-frontal.webp')}}" class="d-block w-100 object-fit-cover" alt="ALMA Bucerías montaje frontal" loading="lazy" style="min-height: 50vh;">
+                        </div>
+
+                        <div class="carousel-item active">
+                            <img src="{{asset('/img/montaje-posterior.webp')}}" class="d-block w-100 object-fit-cover" alt="ALMA Bucerías montaje posterior" loading="lazy"  style="min-height: 50vh; object-position:left;">
+                        </div>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuilding" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselBuilding" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
             </div>
 
             <div class="col-12 col-lg-5 align-self-center">
@@ -262,11 +287,7 @@
                     </li>
 
                     <li class="mb-3">
-                        {{__('25 Unidades de 80.24 m² con 2 recámaras y 2 baños')}}
-                    </li>
-
-                    <li class="mb-3">
-                        {{__('5 Unidades de 82.62 m² con 1 recámara más un Den y 1 baño')}}
+                        {{__('30 Unidades de 80.24 m² con 2 recámaras y 2 baños')}}
                     </li>
 
                     <li class="mb-3">
@@ -279,7 +300,7 @@
                 </p>
 
                 <div class="text-center text-lg-start">
-                    <img width="100px" src="{{asset('/img/gicap-logo.webp')}}" alt="logo de GICAP grupo inmobiliario">
+                    <img width="100px" src="{{asset('/img/gicap-logo.webp')}}" alt="logo de GICAP grupo inmobiliario" loading="lazy">
                 </div>
 
             </div>
@@ -290,5 +311,14 @@
 
     {{-- Ubicación --}}
     @include('components.location')
+
+    @script
+        <script>
+            // This Javascript will get executed every time this component is loaded onto the page...
+            Fancybox.bind("[data-fancybox]", {
+                
+            });
+        </script>
+    @endscript
 
 </div>
