@@ -6,7 +6,7 @@
     @endsection
 
 
-    <div class="row justify-content-center pt-4 pt-lg-5 pb-5" style="background-image: url('{{asset('img/fondo-logo.webp')}}')">
+    <div class="row justify-content-center pt-4 pt-lg-5 pb-5" style="background-image: url('{{asset('img/fondo-logo-new.webp')}}')">
 
         <div class="col-12 col-lg-8 col-xxl-4 mb-5 px-3">
 

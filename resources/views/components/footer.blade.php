@@ -1,3 +1,7 @@
+@php
+    $contact = request()->query('contact');
+@endphp
+
 <footer class="row justify-content-evenly pt-5 pb-3 bg-white">
     
     <div class="col-8 col-lg-3 mb-5 mb-lg-0">
@@ -11,17 +15,17 @@
             <i class="fa-solid fa-location-dot"></i> Lázaro Cárdenas #84 L-2, Colonia Dorada, Bucerías, Bahía de Banderas, Nayarit, C.P. 63732
         </address>
 
-        <a href="https://domusvallarta.com" class="text-decoration-none link-success d-block my-4 my-lg-0">
-            <div class="fs-6 mb-2">{{__('Comercializador Exclusivo')}}</div>
-            <img width="250px" src="{{asset('img/domus-logo-white.svg')}}" alt="Logo de Domus Vallarta Inmobiliaria">
-        </a>
+        @if ($contact != 'no')
+            <a href="https://domusvallarta.com" class="text-decoration-none link-success d-block my-4 my-lg-0">
+                <div class="fs-6 mb-2">{{__('Comercializador Exclusivo')}}</div>
+                <img width="250px" src="{{asset('img/domus-logo-white.svg')}}" alt="Logo de Domus Vallarta Inmobiliaria">
+            </a>
+        @endif
 
     </div>
 
     <div class="col-12 col-lg-3 mb-5 mb-lg-0 text-center text-lg-start">
-        @php
-            $contact = request()->query('contact');
-        @endphp
+
 
         @if ($contact != 'no')
         

@@ -31,14 +31,14 @@
 
         <div class="row justify-content-evenly position-absolute top-0 start-0 h-100 z-3">
     
-            <div class="col-12 col-lg-4 align-self-center text-white">
+            <div class="col-12 col-lg-6 col-xxl-5 align-self-center text-white">
 
                 <h1 class="fs-0 mb-5 mb-lg-4 text-center text-lg-start">{{__('¡Tu nuevo hogar en el paraíso te espera en Bucerías!')}}</h1>
     
                 <div class="row shadow py-4 text-green mb-5" style="background-color: rgba(255,255,255, 0.85);">
     
                     <div class="col-6 col-lg-4 text-center order-1 order-lg-1">
-                        <div class="fs-1">39</div>
+                        <div class="fs-1">30</div>
                         <p class="fs-6 mb-0">{{__('Unidades de 2 recámaras') }}</p>
                     </div>
     
@@ -242,7 +242,7 @@
 
         <div class="text-center text-white mb-5 px-3">
             <h3 class="fs-1">{{__('Modelos')}}</h3>
-            <p class="fs-5">{{__('4 tipos de condominios en venta')}}</p>
+            <p class="fs-5">3 {{__('tipos de condominios en venta')}}</p>
         </div>
 
         <div class="row justify-content-evenly container bg-white py-5 px-0 px-lg-2">

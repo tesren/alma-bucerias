@@ -24,7 +24,7 @@
 
     @if ( $const_updates->isNotEmpty() )
     
-        <div class="row justify-content-center py-5 position-relative" style="background-image: url('{{asset('img/fondo-logo.webp')}}');">
+        <div class="row justify-content-center py-5 position-relative" style="background-image: url('{{asset('img/fondo-logo-new.webp')}}');">
 
             @foreach ($const_updates as $update)
                 <div class="card rounded-0 overflow-hidden col-11 col-lg-9 col-xxl-7 mb-5 p-0 shadow">

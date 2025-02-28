@@ -7,7 +7,7 @@
     @endsection
 
 
-    <div class="row mb-6" style="background-image: url('{{asset('/img/fondo-logo.webp')}}')" id="tower">
+    <div class="row mb-6" style="background-image: url('{{asset('/img/fondo-logo-new.webp')}}')" id="tower">
 
         <div class="col-12 col-lg-5 px-0 order-2 order-lg-1">
             <div class="position-relative">

@@ -69,7 +69,7 @@ class ContactPage extends Component
         }
 
         //Envíamos webhook
-        $webhookUrl = 'https://hooks.zapier.com/hooks/catch/4710110/3fvqx5c/';
+        $webhookUrl = 'https://hooks.zapier.com/hooks/catch/4710110/288mlip/';
 
         // Datos que deseas enviar en el cuerpo de la solicitud
         $data = [
@@ -89,11 +89,11 @@ class ContactPage extends Component
         $response = Http::post($webhookUrl, $data);
 
 
-        $email = Mail::to('info@domusvallarta.com')->bcc('ventas@punto401.com');
+       /*  $email = Mail::to('info@domusvallarta.com')->bcc('ventas@punto401.com');
     
         //$email = Mail::to('erick@punto401.com');
         
-        $email->send(new NewLead($msg));
+        $email->send(new NewLead($msg)); */
 
         session()->flash('message', 'Mensaje enviado exitosamente');
 
