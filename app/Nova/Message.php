@@ -65,6 +65,7 @@ class Message extends Resource
             Text::make('Nombre', 'name')->rules('required', 'max:255')->sortable(),
             Email::make('Email', 'email')->rules('required', 'max:255')->creationRules('unique:agents,email')->updateRules('unique:agents,email,{{resourceId}}'),
             Number::make('Teléfono', 'phone')->min(0)->rules('required'),
+            Text::make('Método', 'method')->sortable()->help('Preferencia de contacto')->nullable(),
             Textarea::make('Contenido', 'content')->alwaysShow(),
             Text::make('URL', 'url')->rules('required', 'max:255')->sortable(),
             DateTime::make('Enviado el', 'created_at')->sortable()->filterable(),

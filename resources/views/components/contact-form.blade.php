@@ -17,8 +17,17 @@
                 <input type="email" wire:model="contact_email" id="contact_email" placeholder="{{__('Correo')}}" class="form-control py-2" required>
             </div>
 
-            <div class="col-12 mb-4 px-0">
+            <div class="col-12 mb-3 px-0">
                 <input type="tel" wire:model="contact_phone" placeholder="{{__('Teléfono')}}" id="contact_phone" class="form-control py-2">
+            </div>
+
+            <div class="col-12 px-0 mb-4">
+                <select class="form-select mb-3" wire:model="contact_method" id="contact_method" required>
+                    <option selected value="">{{__('¿Cómo le gustaría ser contactado?')}}</option>
+                    <option value="Email">{{__('Email')}}</option>
+                    <option value="Llamada">{{__('Llamada')}}</option>
+                    <option value="WhatsApp">{{__('WhatsApp')}}</option>
+                </select>                        
             </div>
 
             {{-- <div class="col-12 mb-4 px-0">

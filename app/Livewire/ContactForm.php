@@ -23,6 +23,9 @@ class ContactForm extends Component
     #[Validate('required')] 
     public $contact_email = '';
 
+    #[Validate('required')] 
+    public $contact_method = '';
+
     public $contact_phone = '';
     public $message = 'Informes sobre ALMA por favor.';
     public $url = '';
@@ -38,6 +41,7 @@ class ContactForm extends Component
         $msg->name = $this->full_name;
         $msg->email = $this->contact_email;
         $msg->phone = $this->contact_phone;
+        $msg->method = $this->contact_method;
         $msg->content = $this->message;
         $msg->url = $this->url;
 
@@ -56,7 +60,7 @@ class ContactForm extends Component
         }
 
         //Envíamos webhook
-        $webhookUrl = 'https://hooks.zapier.com/hooks/catch/4710110/288mlip/';
+        $webhookUrl = 'https://cloud.punto401.com/webhook/7bed19ac-6acc-4233-8ca5-b6d72cdbf680';
 
         // Datos que deseas enviar en el cuerpo de la solicitud
         $data = [
@@ -64,6 +68,7 @@ class ContactForm extends Component
             'email' => $msg->email,
             'phone' => $msg->phone,
             'url' => $msg->url,
+            'method' => $msg->method,
             'content' => $msg->content,
             'interest' => 'Condominios',
             'development' => 'ALMA Bucerías',
@@ -72,8 +77,11 @@ class ContactForm extends Component
             'created_at' => $msg->created_at,
         ];
 
+        $n8nUser = env('N8N_AUTH_USER');
+        $n8nPass = env('N8N_AUTH_PASS');
+        
         // Enviar la solicitud POST al webhook
-        $response = Http::post($webhookUrl, $data);
+        $response = Http::withBasicAuth($n8nUser, $n8nPass)->post($webhookUrl, $data);
 
 
        /*  $email = Mail::to('info@domusvallarta.com')->bcc('ventas@punto401.com');
