@@ -46,22 +46,22 @@
 
         <div class="col-12 col-lg-8 p-1">
             @isset($unit_type_imgs[0])
-                <img src="{{ $unit_type_imgs[0]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 object-fit-cover main-gallery-img">
+                <img src="{{ $unit_type_imgs[0]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 object-fit-cover h-100">
             @endisset
         </div>
 
         <div class="col-12 col-lg-4 px-0">
             
             <div class="row h-100">
-                <div class="col-6 col-lg-12 px-0 gallery-img">
+                <div class="col-6 col-lg-12 px-0">
                     @isset($unit_type_imgs[1])
-                        <img src="{{ $unit_type_imgs[1]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 p-1 h-100 object-fit-cover">
+                        <img src="{{ $unit_type_imgs[1]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 p-1 h-100 object-fit-cover" style="max-height: 45vh;">
                     @endisset
                 </div>
     
-                <div class="col-6 col-lg-12 px-0 gallery-img">
+                <div class="col-6 col-lg-12 px-0">
                     @isset($unit_type_imgs[2])
-                        <img src="{{ $unit_type_imgs[2]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 p-1 h-100 object-fit-cover">
+                        <img src="{{ $unit_type_imgs[2]->getUrl('large') }}" alt="{{__('Condominio')}} {{$unit->name}} - ALMA Bucerías" data-fancybox="gallery" class="w-100 p-1 h-100 object-fit-cover" style="max-height: 45vh;">
                     @endisset
                 </div>
             </div>
