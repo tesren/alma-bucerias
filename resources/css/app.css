@@ -231,6 +231,15 @@ body{
     stroke-width: 1px;
 }
 
+.fs-plans{
+    font-size: 1.5rem !important
+}
+
+.fs-7{
+    font-size: 14px !important;
+    font-weight: 300;
+}
+
 @media (max-width: 992px) {
 
     .mt-6{
@@ -261,6 +270,10 @@ body{
 
     .main-gallery-img{
         height: 35vh;
+    }
+
+    .fs-plans{
+        font-size: 1.1rem !important
     }
 
 }
