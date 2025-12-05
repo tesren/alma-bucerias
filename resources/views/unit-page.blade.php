@@ -199,8 +199,8 @@
 
                 <div class="col-9 align-self-center">
                     <div class="fs-3">Domus Vallarta</div>
-                    <a href="tel:+523322005523" class="link-secondary fs-5">
-                        +52 332 200 5523
+                    <a href="tel:+52{{env('CONTACT_NUMBER')}}" class="link-secondary fs-5">
+                        +52 {{env('DISPLAY_NUMBER')}}
                     </a>
                 </div>
             </div>

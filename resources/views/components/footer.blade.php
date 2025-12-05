@@ -35,8 +35,8 @@
                 <i class="fa-solid fa-envelope"></i> info@domusvallarta.com
             </a>
 
-            <a href="tel:+523322005523" class="link-success fs-5 text-decoration-none d-block mb-2 fw-light">
-                <i class="fa-solid fa-phone"></i> +52 332 200 5523
+            <a href="tel:+52{{env('CONTACT_NUMBER')}}" class="link-success fs-5 text-decoration-none d-block mb-2 fw-light">
+                <i class="fa-solid fa-phone"></i> +52 {{env('DISPLAY_NUMBER')}}
             </a>
 
             <a href="https://www.facebook.com/DomusVallartaInmobiliaria" target="_blank" rel="noopener noreferrer" aria-label="Facebook page" class="link-success text-decoration-none fs-4 me-3">
@@ -51,7 +51,7 @@
     </div>
 
     <div class="col-12 pt-2 px-3 text-center mt-5">
-        <i class="fa-regular fa-copyright"></i> Copyright 2024 {{__('Todos los derechos reservados')}} | <a href="{{ route('privacy', request()->query() )}}" wire:navigate class="link-success fw-light">{{__('Aviso de Privacidad')}}</a>
+        <i class="fa-regular fa-copyright"></i> Copyright 2024 - {{date('Y')}}. {{__('Todos los derechos reservados')}} | <a href="{{ route('privacy', request()->query() )}}" wire:navigate class="link-success fw-light">{{__('Aviso de Privacidad')}}</a>
         | 
        <a href="https://punto401.com" class="link-success fw-light text-decoration-none">
            {{__('Sitio web hecho por')}} <img width="70px" src="{{asset('img/logo-p401.svg')}}" alt="Logo de Punto401 Marketing">
