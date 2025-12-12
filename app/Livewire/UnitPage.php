@@ -9,11 +9,13 @@ class UnitPage extends Component
 {
 
     public Unit $unit;
+    public $contact;
 
     public function mount($name)
     {
         $this->unit = Unit::where('name', $name)->firstOrFail();
         $this->dispatch('id-unidad', id:$this->unit->id);
+        $this->contact = request()->query('contact');
     }
     
     public function saveUnit($unitID){

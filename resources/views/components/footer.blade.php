@@ -28,6 +28,10 @@
 
 
         @if ($contact != 'no')
+
+            @php
+                $formatted_phone = preg_replace('/(\d{3})(\d{3})(\d{4})/', '$1 $2 $3', config('domus.phone_number') );
+            @endphp
         
             <div class="fs-3 mb-3">{{__('Contacto')}}</div>
 
@@ -35,8 +39,8 @@
                 <i class="fa-solid fa-envelope"></i> info@domusvallarta.com
             </a>
 
-            <a href="tel:+52{{env('CONTACT_NUMBER')}}" class="link-success fs-5 text-decoration-none d-block mb-2 fw-light">
-                <i class="fa-solid fa-phone"></i> +52 {{env('DISPLAY_NUMBER')}}
+            <a href="tel:+52{{config('domus.phone_number') }}" class="link-success fs-5 text-decoration-none d-block mb-2 fw-light">
+                <i class="fa-solid fa-phone"></i> +52 {{$formatted_phone}}
             </a>
 
             <a href="https://www.facebook.com/DomusVallartaInmobiliaria" target="_blank" rel="noopener noreferrer" aria-label="Facebook page" class="link-success text-decoration-none fs-4 me-3">

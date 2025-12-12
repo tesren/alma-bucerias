@@ -188,23 +188,30 @@
 
 
         {{-- Sección de contacto --}}
-        <div class="col-12 col-lg-4 px-4">
-            <livewire:contact-form />
+        @if ($contact != 'no')
+            @php
+                $formatted_phone = preg_replace('/(\d{3})(\d{3})(\d{4})/', '$1 $2 $3', config('domus.phone_number') );
+            @endphp
 
-            <div class="row mt-4">
+            <div class="col-12 col-lg-4 px-4">
+                <livewire:contact-form />
 
-                <div class="col-3">
-                    <img src="{{asset('img/domus-round.webp')}}" alt="Domus Vallarta" class="w-100">
-                </div>
+                <div class="row mt-4">
 
-                <div class="col-9 align-self-center">
-                    <div class="fs-3">Domus Vallarta</div>
-                    <a href="tel:+52{{env('CONTACT_NUMBER')}}" class="link-secondary fs-5">
-                        +52 {{env('DISPLAY_NUMBER')}}
-                    </a>
+                    <div class="col-3">
+                        <img src="{{asset('img/domus-round.webp')}}" alt="Domus Vallarta" class="w-100">
+                    </div>
+
+                    <div class="col-9 align-self-center">
+                        <div class="fs-3">Domus Vallarta</div>
+                        <a href="tel:+52{{config('domus.phone_number') }}" class="link-secondary fs-5">
+                            +52 {{$formatted_phone}}
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
+        
 
         {{-- Planes de pago --}}
         <div class="row mt-6 justify-content-between px-0">
