@@ -50,6 +50,25 @@ CREATE TABLE `action_events` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `api_request_logs`
+--
+
+CREATE TABLE `api_request_logs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `method` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `query_string` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status_code` smallint(5) UNSIGNED NOT NULL,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_agent` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `response_time_ms` smallint(5) UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `construction_updates`
 --
 
@@ -176,6 +195,14 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2026_07_23_000001_add_api_role_fields_to_users_table', 1),
+(2, '2026_07_23_000002_create_api_request_logs_table', 1);
 
 -- --------------------------------------------------------
 
@@ -527,6 +554,14 @@ ALTER TABLE `action_events`
   ADD KEY `action_events_user_id_index` (`user_id`);
 
 --
+-- Indices de la tabla `api_request_logs`
+--
+ALTER TABLE `api_request_logs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `api_request_logs_user_id_foreign` (`user_id`),
+  ADD KEY `api_request_logs_created_at_index` (`created_at`);
+
+--
 -- Indices de la tabla `construction_updates`
 --
 ALTER TABLE `construction_updates`
@@ -702,6 +737,12 @@ ALTER TABLE `action_events`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `api_request_logs`
+--
+ALTER TABLE `api_request_logs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `construction_updates`
 --
 ALTER TABLE `construction_updates`
@@ -820,6 +861,12 @@ ALTER TABLE `unit_user`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Filtros para la tabla `api_request_logs`
+--
+ALTER TABLE `api_request_logs`
+  ADD CONSTRAINT `api_request_logs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

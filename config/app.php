@@ -59,6 +59,8 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+    'api_project_slug' => env('API_PROJECT_SLUG', 'unknown'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

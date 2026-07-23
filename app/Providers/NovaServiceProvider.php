@@ -9,6 +9,7 @@ use App\Nova\Tower;
 use App\Nova\Message;
 use App\Nova\Section;
 use App\Nova\UnitType;
+use App\Nova\ApiRequestLog;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 use App\Nova\PaymentPlan;
@@ -48,6 +49,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::resource(UnitType::class)->icon('collection'),     
                 MenuSection::resource(PaymentPlan::class)->icon('currency-dollar'),
                 MenuSection::resource(Message::class)->icon('inbox-in'),
+                MenuSection::resource(ApiRequestLog::class)->icon('server'),
                 MenuSection::resource(ConstructionUpdate::class)->icon('camera'),
                 MenuSection::resource(Shape::class)->icon('cube'),
 
@@ -111,9 +113,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
-            return in_array($user->email, [
-                //
-            ]);
+            return $user->role !== 'api';
         });
     }
 

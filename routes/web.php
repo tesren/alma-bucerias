@@ -27,12 +27,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Sitio público desactivado temporalmente — todo redirige a /nova.
+/*
 Route::localized(function () {
 
     Route::get('/', HomePage::class)->name('home');
 
     Route::get( Lang::uri('/estilo-de-vida'), LifestylePage::class)->name('lifestyle');
-    
+
     Route::get( Lang::uri('/contacto'), ContactPage::class)->name('contact');
 
     Route::get( Lang::uri('/desarrollador-del-proyecto'), AboutPage::class)->name('about');
@@ -40,7 +42,7 @@ Route::localized(function () {
     Route::get( Lang::uri('/avances-de-construccion'), ConstructionPage::class)->name('construction');
 
     Route::get( Lang::uri('/buscar-unidades'), SearchPage::class)->name('search');
-    
+
     Route::get( Lang::uri('/condominio-en-venta').'/{name}', UnitPage::class)->name('unit');
 
     Route::get( Lang::uri('/inventario/torre').'-{name}', InventoryPage::class)->name('tower');
@@ -54,6 +56,12 @@ Route::localized(function () {
     Route::get( Lang::uri('/unidades-guardadas'), SavedUnitsPage::class)->name('saved');
 
 });
+*/
+
+// El middleware 'auth' redirige a route('login') cuando no hay sesión activa;
+// como la ruta pública de login está comentada, se conserva este nombre para
+// que ese redirect no truene, y de paso manda al mismo lugar que todo lo demás.
+Route::redirect('/iniciar-sesion', '/nova')->name('login');
 
 Route::get('/alma-optimize', function() {
 
@@ -63,4 +71,7 @@ Route::get('/alma-optimize', function() {
     Artisan::call('view:cache');
 
     return ('Optimizado');
-});
+})->middleware('auth');
+
+// Cualquier otra ruta redirige temporalmente (302) a /nova.
+Route::redirect('/{any}', '/nova')->where('any', '^(?!nova).*$');

@@ -59,6 +59,11 @@ class Unit extends Model implements HasMedia
         return $this->belongsTo(Tower::class);
     }
 
+    public function section()
+    {
+        return $this->tower();
+    }
+
     /**
      * Get the section that owns the Unit
      *

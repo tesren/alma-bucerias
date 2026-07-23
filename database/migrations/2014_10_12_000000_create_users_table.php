@@ -15,10 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('phone', 15)->nullable();
+            $table->string('lang', 2)->default('es');
+            $table->string('country_code', 5)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->text('notes')->nullable();
+            $table->integer('agent_id')->nullable()->index();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

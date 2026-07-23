@@ -176,6 +176,7 @@ class User extends Resource
                 'agent' => __('Asesor Inmobiliario'),
                 'admin' => __('Administrador del sistema'),
                 'superadmin' => __('Super Admin'),
+                'api' => 'API',
             ])->displayUsingLabels()->filterable()->sortable(),
 
             //Asesor
@@ -276,6 +277,7 @@ class User extends Resource
         return [
             new Actions\SendLoginData,
             new Actions\ChangeUserLang,
+            new Actions\RevokeApiToken,
         ];
     }
 }

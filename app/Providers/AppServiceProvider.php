@@ -12,6 +12,9 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+        /* $this->app->bind('path.public', function() {
+            return '/home/nw67x797r4bn/public_html/almabucerias.com';
+        }); */
     }
 
     /**
@@ -19,6 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        ini_set('serialize_precision', -1);
     }
 }
