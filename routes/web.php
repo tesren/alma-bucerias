@@ -1,17 +1,19 @@
 <?php
 
-use App\Livewire\HomePage;
-use App\Livewire\UnitPage;
 use App\Livewire\AboutPage;
-use App\Livewire\LoginPage;
-use App\Livewire\SearchPage;
+use App\Livewire\ConstructionPage;
 use App\Livewire\ContactPage;
-use App\Livewire\PrivacyPage;
-use App\Livewire\ProfilePage;
+use App\Livewire\HomePage;
 use App\Livewire\InventoryPage;
 use App\Livewire\LifestylePage;
+use App\Livewire\LoginPage;
+use App\Livewire\PrivacyPage;
+use App\Livewire\ProfilePage;
 use App\Livewire\SavedUnitsPage;
-use App\Livewire\ConstructionPage;
+use App\Livewire\SearchPage;
+use App\Livewire\UnitPage;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Route;
 
 /*

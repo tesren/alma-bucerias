@@ -38,9 +38,9 @@ class UnitType extends Model implements HasMedia
 
     public function registerMediaConversions(Media $media = null): void
     {
-        $this->addMediaConversion('thumb')->width(450)->keepOriginalImageFormat()->nonOptimized()->nonQueued();
+        $this->addMediaConversion('thumb')->width(450)->keepOriginalImageFormat()->nonQueued();
         
-        $this->addMediaConversion('medium')->width(1280)->keepOriginalImageFormat()->nonOptimized()->nonQueued();
+        $this->addMediaConversion('medium')->width(1280)->keepOriginalImageFormat()->nonQueued();
         
         $this->addMediaConversion('large')->width(1920)->keepOriginalImageFormat()->nonOptimized()->nonQueued();
     }

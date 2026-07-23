@@ -22,7 +22,7 @@
     </div>
 
 
-    @if ( $const_updates->isNotEmpty() )
+    @if ( $const_updates->count() )
     
         <div class="row justify-content-center py-5 position-relative" style="background-image: url('{{asset('img/fondo-logo-new.webp')}}');">
 
@@ -36,18 +36,16 @@
                     @endphp
 
                     <div class="position-relative">
-                        <img src="{{$portrait}}" class="w-100" alt="Avance de Obra ALMA Bucerías - {{$date}}" style="max-height: 470px; object-fit:cover;">
-                        <div class="row position-absolute top-0 start-0 justify-content-center h-100">
-                            <div class="col-12 text-center align-self-center">
-                                
-                                @if ($update->video_link)
-                                    <a href="#construction-{{$update->id}}-1" class="link-light" aria-label="Ver avance de obra de {{$date}}"><i class="fa-solid fa-4x fa-play"></i></a>
-                                @else
-                                    <a href="#construction-{{$update->id}}-1" class="link-light text-decoration-none fs-1" aria-label="Ver avance de obra de {{$date}}"><i class="fa-regular fa-images"></i> {{count($images)}}</a>
-                                @endif
+                        <a href="#construction-{{$update->id}}-1">
+                            <img src="{{$portrait}}" class="w-100" alt="Avance de Obra ALMA Bucerías - {{$date}}" style="max-height: 470px; object-fit:cover;">
+                        </a>
 
-                            </div>
-                        </div>
+                        @if ($update->video_link)
+                            <a href="#construction-{{$update->id}}-1" class="position-absolute top-50 start-50 translate-middle link-light" aria-label="Ver avance de obra de {{$date}}"><i class="fa-solid fa-4x fa-play"></i></a>
+                        @else
+                            <a href="#construction-{{$update->id}}-1" class="link-light text-decoration-none fs-1 position-absolute top-50 start-50 translate-middle" aria-label="Ver avance de obra de {{$date}}"><i class="fa-regular fa-images"></i> {{count($images)}}</a>
+                        @endif
+
                     </div>
 
                     <div class="card-body d-flex position-relative overflow-hidden text-green">
@@ -67,9 +65,12 @@
                       
                 </div>
             @endforeach
-        </div>
+        
 
-        {{-- $const_updates->links() --}}
+            <div class="d-flex justify-content-center pb-5" id="pagination">
+                {{ $const_updates->links() }}
+            </div>
+        </div>
         
     @endif
 
